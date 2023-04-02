@@ -11,6 +11,10 @@ public class TimedSpawnerRandom: MonoBehaviour {
     [Tooltip("Minimum time between consecutive spawns, in seconds")] [SerializeField] float minTimeBetweenSpawns = 1f;
     [Tooltip("Maximum time between consecutive spawns, in seconds")] [SerializeField] float maxTimeBetweenSpawns = 3f;
     [Tooltip("Maximum distance in X between spawner and spawned objects, in meters")] [SerializeField] float maxXDistance = 0.5f;
+    [Tooltip("Maximum distance in Y between spawner and spawned objects, in meters")] [SerializeField] float maxYDistance = 0f;
+    [Tooltip("Maximum distance in Z between spawner and spawned objects, in meters")] [SerializeField] float maxZDistance = 0f;
+    
+
 
     void Start() {
          this.StartCoroutine(SpawnRoutine());    // co-routines
@@ -25,8 +29,8 @@ public class TimedSpawnerRandom: MonoBehaviour {
             // await Task.Delay((int)(timeBetweenSpawnsInSeconds*1000));       // async-await
             Vector3 positionOfSpawnedObject = new Vector3(
                 transform.position.x + Random.Range(-maxXDistance, +maxXDistance),
-                transform.position.y,
-                transform.position.z);
+                transform.position.y + Random.Range(-maxYDistance, +maxYDistance),
+                transform.position.z + Random.Range(-maxZDistance, +maxZDistance));
             GameObject newObject = Instantiate(prefabToSpawn.gameObject, positionOfSpawnedObject, Quaternion.identity);
             newObject.GetComponent<Mover>().SetVelocity(velocityOfSpawnedObject);
         }
