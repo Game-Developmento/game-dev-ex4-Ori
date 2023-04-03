@@ -170,8 +170,8 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 1576551791161948459, guid: e3c28ae566a20f449b8c7e46ca31ca83,
     type: 3}
   velocityOfSpawnedObject: {x: 0, y: 0, z: 0}
-  minTimeBetweenSpawns: 1
-  maxTimeBetweenSpawns: 5
+  minTimeBetweenSpawns: 0
+  maxTimeBetweenSpawns: 2
   maxXDistance: 7
   maxYDistance: 4
   maxZDistance: 4
