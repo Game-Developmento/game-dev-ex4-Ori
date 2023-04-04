@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
+using System.Collections.Generic;
+
 
 /**
  * This component instantiates a given prefab at random time intervals and random bias from its object position.
@@ -14,7 +16,15 @@ public class TimedSpawnerRandom : MonoBehaviour
     [Tooltip("Maximum distance in Y between spawner and spawned objects, in meters")][SerializeField] float maxYDistance = 0f;
     [Tooltip("Maximum distance in Z between spawner and spawned objects, in meters")][SerializeField] float maxZDistance = 0f;
 
+    private bool activeRespawn = true;
 
+    private List<GameObject> spawnedObj = new List<GameObject>();
+
+
+    public void setActiveRespawn(bool value)
+    {
+        this.activeRespawn = value;
+    }
 
     void Start()
     {
@@ -35,6 +45,10 @@ public class TimedSpawnerRandom : MonoBehaviour
         return true;
     }
 
+    public List<GameObject> GetSpawnedObjects()
+    {
+        return this.spawnedObj;
+    }
     IEnumerator SpawnRoutine()
     {    // co-routines
          // async Task SpawnRoutine() {  // async-await
@@ -47,11 +61,12 @@ public class TimedSpawnerRandom : MonoBehaviour
                 transform.position.x + Random.Range(-maxXDistance, +maxXDistance),
                 transform.position.y + Random.Range(-maxYDistance, +maxYDistance),
                 transform.position.z + Random.Range(-maxZDistance, +maxZDistance));
-
-            if (isValidPosition(positionOfSpawnedObject, 2f))
+            Debug.Log(activeRespawn);
+            if (isValidPosition(positionOfSpawnedObject, 2f) && activeRespawn)
             {
                 GameObject newObject = Instantiate(prefabToSpawn.gameObject, positionOfSpawnedObject, Quaternion.identity);
                 newObject.GetComponent<Mover>().SetVelocity(velocityOfSpawnedObject);
+                spawnedObj.Add(newObject);
             }
         }
     }

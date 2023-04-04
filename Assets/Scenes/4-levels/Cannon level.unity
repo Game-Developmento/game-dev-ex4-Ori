@@ -170,8 +170,8 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 1580548906664458945, guid: 511dd3afc8fd57f4e9df2a2b239d4271,
     type: 3}
   velocityOfSpawnedObject: {x: 0, y: 0, z: 0}
-  minTimeBetweenSpawns: 3
-  maxTimeBetweenSpawns: 8
+  minTimeBetweenSpawns: 5
+  maxTimeBetweenSpawns: 15
   maxXDistance: 7
   maxYDistance: 4
   maxZDistance: 4
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 187464075}
   m_Layer: 0
   m_Name: EnemySpawners
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -829,7 +829,7 @@ GameObject:
   - component: {fileID: 1763423222}
   - component: {fileID: 1763423221}
   m_Layer: 0
-  m_Name: Bomb
+  m_Name: Freeze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -847,11 +847,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab63d9ef6fc24b4792a19faafaad16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 5030365890519287167, guid: 1b16b9890dc9fcc4a88653e8e47144dd,
+  prefabToSpawn: {fileID: 5818138641191667611, guid: ce4dcd92e9d6a484caed5cd116ea49b9,
     type: 3}
   velocityOfSpawnedObject: {x: 0, y: 0, z: 0}
-  minTimeBetweenSpawns: 3
-  maxTimeBetweenSpawns: 8
+  minTimeBetweenSpawns: 5
+  maxTimeBetweenSpawns: 15
   maxXDistance: 7
   maxYDistance: 4
   maxZDistance: 4

@@ -7,7 +7,6 @@
 public class LaserShooter: ClickSpawner {
     [SerializeField] NumberField scoreField;
 
-    
 
     protected override GameObject spawnObject() {
         GameObject newObject = base.spawnObject();  // base = super
