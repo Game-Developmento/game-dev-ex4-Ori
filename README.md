@@ -16,4 +16,3 @@ This power-up provides the player with a bigger laser that can destroy multiple 
 This power-up freezes all enemies on the screen, except those that are very low, to prevent the player from colliding into them.
 
 #### Be sure to grab these power-ups when they appear to gain an edge in the game.
-
