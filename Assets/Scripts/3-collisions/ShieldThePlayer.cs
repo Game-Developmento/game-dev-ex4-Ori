@@ -7,7 +7,6 @@ public class ShieldThePlayer : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player") {
-            Debug.Log("Shield triggered by player");
             var destroyComponent = other.GetComponent<DestroyOnTrigger2D>();
             if (destroyComponent) {
                 destroyComponent.StartCoroutine(ShieldTemporarily(destroyComponent));        // co-routines
@@ -16,9 +15,7 @@ public class ShieldThePlayer : MonoBehaviour {
                 // ShieldTemporarily(destroyComponent);                                      // async-await
                 Destroy(gameObject);  // Destroy the shield itself - prevent double-use
             }
-        } else {
-            Debug.Log("Shield triggered by "+other.name);
-        }
+        } 
     }
 
     private IEnumerator ShieldTemporarily(DestroyOnTrigger2D destroyComponent) {   // co-routines

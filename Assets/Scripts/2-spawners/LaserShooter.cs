@@ -7,11 +7,10 @@
 public class LaserShooter: ClickSpawner {
     [SerializeField] NumberField scoreField;
 
-
+    private GameObject newObject;
     protected override GameObject spawnObject() {
-        GameObject newObject = base.spawnObject();  // base = super
+        newObject = base.spawnObject();  // base = super
     
-
         // Modify the text field of the new object.
         ScoreAdder newObjectScoreAdder = newObject.GetComponent<ScoreAdder>();
         if (newObjectScoreAdder)
@@ -19,4 +18,6 @@ public class LaserShooter: ClickSpawner {
 
         return newObject;
     }
+
+  
 }

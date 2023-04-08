@@ -31,7 +31,6 @@ public class ClickSpawner : MonoBehaviour
     }
     protected virtual GameObject spawnObject()
     {
-        // Debug.Log("Spawning a new object");
 
         // Step 1: spawn the new object.
         Vector3 positionOfSpawnedObject = transform.position;  // span at the containing object position.

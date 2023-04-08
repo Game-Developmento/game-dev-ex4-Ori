@@ -61,7 +61,6 @@ public class TimedSpawnerRandom : MonoBehaviour
                 transform.position.x + Random.Range(-maxXDistance, +maxXDistance),
                 transform.position.y + Random.Range(-maxYDistance, +maxYDistance),
                 transform.position.z + Random.Range(-maxZDistance, +maxZDistance));
-            Debug.Log(activeRespawn);
             if (isValidPosition(positionOfSpawnedObject, 2f) && activeRespawn)
             {
                 GameObject newObject = Instantiate(prefabToSpawn.gameObject, positionOfSpawnedObject, Quaternion.identity);

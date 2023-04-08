@@ -7,16 +7,19 @@ public class GameOverOnTrigger2D : MonoBehaviour
     [Tooltip("Every object tagged with this tag will trigger game over")]
     [SerializeField] string triggeringTag;
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == triggeringTag && enabled) {
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == triggeringTag && enabled)
+        {
             Debug.Log("Game over!");
-            Application.Quit();
-            // UnityEditor.EditorApplication.isPlaying = false;  # Error on editor 2021.3
+            this.gameObject.SetActive(false);
+            GameObject[] enemeis = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemy in enemeis) {
+                enemy.SetActive(false);
+            }
         }
     }
 
-    private void Update() {
-        /* Just to show the enabled checkbox in Editor */
-    }
+
 
 }
