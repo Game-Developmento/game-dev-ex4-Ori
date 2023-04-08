@@ -8,9 +8,9 @@ Welcome to the SpaceShip Game! This is an action game where the player controls 
 4. Power-ups are available in the game, and can give you an advantage. Make use of them when they appear.
 ## Power Ups
 The game features two power-ups that can give the player an advantage.
-### Canon power-up:
+### Canon power-up
 This power-up provides the player with a bigger laser that can destroy multiple enemies at once for a few seconds.
-### Freeze power-up:
+### Freeze power-up
 This power-up freezes all enemies on the screen, except those that are very low, to prevent the player from colliding into them.
 
-#### Be sure to grab these power-ups when they appear to gain an edge in the game.
+#### Be sure to grab these power-ups when they appear to gain an edge in the game
